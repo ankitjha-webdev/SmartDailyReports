@@ -8,7 +8,4 @@ Say goodbye to the time-consuming chore of manual report writing and welcome a n
 <!-- This Extension is still under development -->
 ```This Extension is still under development ```
 
-    ```diff
-    + This text will appear in green.
-    - This text will appear in red.
-    ```
+    ![Alt text](preview.png)
