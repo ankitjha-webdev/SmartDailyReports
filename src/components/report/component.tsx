@@ -29,7 +29,7 @@ export function Report() {
             setLoading(false);
             setText('');
         } catch (error: any) {
-            setError(error.message);
+            setError("Oops! Something went wrong. Please try again.");
             setLoading(false);
             setText('');
         }
