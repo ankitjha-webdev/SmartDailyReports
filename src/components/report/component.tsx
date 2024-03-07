@@ -28,7 +28,7 @@ export function Report() {
             setOutput(data.text);
             setLoading(false);
             setText('');
-        } catch (error) {
+        } catch (error: any) {
             setError(error.message);
             setLoading(false);
             setText('');
