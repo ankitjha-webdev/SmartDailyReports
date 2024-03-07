@@ -10,7 +10,7 @@ export function Report() {
         try {
             e.preventDefault();
             if (!text) {
-                setError('Paragraph is required!')
+                setError('Oops! Looks like you forgot to fill in this field.')
                 return;
             }
             setError('');
