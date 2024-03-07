@@ -31,6 +31,7 @@ export function Report() {
             setLoading(false);
             setText('');
         } catch (error: any) {
+            setHasError(false);
             setError("Oops! Something went wrong. Please try again.");
             setLoading(false);
             setText('');
@@ -47,7 +48,7 @@ export function Report() {
                     <textarea value={text} onChange={(e) => {
                         setError('');
                         return setText(e.target.value);
-                    }} className={`block w-full h-24 p-2 mt-1 border-2 border-gray-300 rounded-md form-textarea ${error && hasError ? 'border-red-600' : ''}`} placeholder="Share your polished or incomplete sentense"></textarea>
+                    }} className={`block w-full h-24 p-2 mt-1 border-2 border-gray-300 rounded-md form-textarea ${error && hasError === false ? 'border-red-600' : ''}`} placeholder="Share your polished or incomplete sentense"></textarea>
                     {error && <span className="text-red-600">{error}</span>}
                     <div className="flex items-center justify-center">
                         <button type="submit" className={`flex justify-center items-center w-full shadow px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-800 transition ease-in-out duration-150 ${loading ? 'cursor-not-allowed opacity-50' : ''}`} disabled={loading}>
