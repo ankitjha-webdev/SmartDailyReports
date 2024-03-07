@@ -6,6 +6,6 @@ Say goodbye to the time-consuming chore of manual report writing and welcome a n
 
 
 <!-- This Extension is still under development -->
-`This Extension is still under development `
+`This Extension is still under development`
 
-    ![Preview Image](https://raw.githubusercontent.com/ankitjha-webdev/SmartDailyReports/main/preview.png)
+![Preview Image](https://raw.githubusercontent.com/ankitjha-webdev/SmartDailyReports/main/preview.png)
