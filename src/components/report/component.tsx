@@ -40,7 +40,7 @@ export function Report() {
             <div className="space-y-4 text-center">
                 <h2 className="text-3xl font-bold text-gray-800">Smart Daily Reports</h2>
                 <p className="text-gray-600">Ready to elevate your daily insights? Share your thoughts below and let our smart extension do the rest.</p>
-                <a href="https://github.com/ankitjha-webdev/SmartDailyReports?tab=readme-ov-file#smart-daily-reports" target="_blank" rel="noreferrer" title="Click to know more"><span className="text-red-400 hover:text-blue-600">Still in Development</span></a>
+                <a href="https://github.com/ankitjha-webdev/SmartDailyReports?tab=readme-ov-file#smart-daily-reports" target="_blank" rel="noreferrer" title="Click to know more"><span className="text-red-400 hover:text-blue-600">Still under Development</span></a>
                 <form className="space-y-3" onSubmit={handleSubmit}>
                     <textarea value={text} onChange={(e) => {
                         setError('');
