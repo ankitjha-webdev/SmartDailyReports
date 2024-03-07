@@ -4,7 +4,7 @@ Introducing SmartDailyReports, the ultimate Chrome extension for effortless dail
 
 Say goodbye to the time-consuming chore of manual report writing and welcome a new era of efficiency and precision. Whether you're managing work projects, academic research, or personal goals, SmartDailyReports adapts to your needs, offering a personalized reporting experience that saves time and boosts productivity. Experience the convenience of smart, automated daily reports and focus on what truly matters. Embrace the future of reporting with SmartDailyReports—where daily reporting is not just easier, but smarter and more intuitive than ever befor
 
-    ![Preview Image](/preview.png)
+    ![Preview Image](preview.png)
 
 <!-- This Extension is still under development -->
 `This Extension is still under development `
