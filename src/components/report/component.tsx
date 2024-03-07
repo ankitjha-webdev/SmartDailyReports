@@ -9,7 +9,7 @@ export function Report() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
             e.preventDefault();
-            if (!text) {
+            if (!text.trim()) {
                 setError('Oops! Looks like you forgot to fill in this field.')
                 return;
             }
