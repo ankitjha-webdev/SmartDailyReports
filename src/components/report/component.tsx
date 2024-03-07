@@ -17,7 +17,7 @@ export function Report() {
             }
             setError('');
             setLoading(true);
-            const response = await fetch('http://localhost:5500/g4f', {
+            const response = await fetch('https://smart-daily-reports-apiv1-q8svtf6lh-ankitjha-webdev.vercel.app/g4f', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
