@@ -7,26 +7,32 @@ export function Report() {
     const [error, setError] = useState('');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        if (!text) {
-            setError('Paragraph is required!')
-            return;
+        try {
+            e.preventDefault();
+            if (!text) {
+                setError('Paragraph is required!')
+                return;
+            }
+            setError('');
+            setLoading(true);
+            const response = await fetch('http://localhost:5500/g4f', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text })
+            });
+            console.log(response, "response");
+            const data = await response.json();
+    
+            setOutput(data.text);
+            setLoading(false);
+            setText('');
+        } catch (error) {
+            setError(error.message);
+            setLoading(false);
+            setText('');
         }
-        setError('');
-        setLoading(true);
-        const response = await fetch('http://localhost:5500/g4f', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ text })
-        });
-        console.log(response, "response");
-        const data = await response.json();
-
-        setOutput(data.text);
-        setLoading(false);
-        setText('');
     }
 
     return (
