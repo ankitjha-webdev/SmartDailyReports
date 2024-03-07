@@ -11,3 +11,4 @@ Say goodbye to the time-consuming chore of manual report writing and welcome a n
     ```diff
     + This text will appear in green.
     - This text will appear in red.
+    ```
