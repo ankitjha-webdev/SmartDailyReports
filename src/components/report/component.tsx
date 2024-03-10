@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Markdown from 'markdown-to-jsx'
 
 export function Report() {
     const [output, setOutput] = useState('');
@@ -17,17 +18,18 @@ export function Report() {
             }
             setError('');
             setLoading(true);
-            const response = await fetch('https://smart-daily-reports-apiv1-q8svtf6lh-ankitjha-webdev.vercel.app/g4f', {
+            //  http://localhost:5000/api/v1/generate-report
+            // https://api.ankitkumarjha.dev/api/v1/generate-report
+            const response = await fetch(' http://localhost:5000/api/v1/generate-report', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ text })
             });
-            console.log(response, "response");
             const data = await response.json();
-
-            setOutput(data.text);
+            const markdownText = data.data.text;
+            setOutput(markdownText);
             setLoading(false);
             setText('');
         } catch (error: any) {
@@ -42,7 +44,7 @@ export function Report() {
         <div className="flex flex-col items-center justify-center p-6 bg-gray-100 rounded-lg shadow-md extension-feature">
             <div className="space-y-4 text-center">
                 <h2 className="text-3xl font-bold text-gray-800">Smart Daily Reports</h2>
-                <p className="text-gray-600">Ready to elevate your daily insights? Share your thoughts below and let our smart extension do the rest.</p>
+                <p className="text-gray-600">Ready to elevate your daily insights? Share your task below and let our smart extension do the rest.</p>
                 <a href="https://github.com/ankitjha-webdev/SmartDailyReports?tab=readme-ov-file#smart-daily-reports" target="_blank" rel="noreferrer" title="Click to know more"><span className="text-red-400 hover:text-blue-600">Still under Development</span></a>
                 <form className="space-y-3" onSubmit={handleSubmit}>
                     <textarea value={text} onChange={(e) => {
@@ -61,13 +63,16 @@ export function Report() {
                                     <span>Processing...</span>
                                 </>
                             ) : (
-                                <span>Submit</span>
+                                <span>Generate</span>
                             )}
                         </button>
                     </div>
                 </form>
                 {output && <div id="outputSection" className="p-4 mt-4 text-justify text-gray-800 bg-gray-200 rounded-md">
-                    {output}
+                    <span className="mb-4 text-red-600">Please ensure you read the content thoroughly before proceeding.</span>
+                    <div className="overflow-auto">
+                        {output}
+                    </div>
                 </div>}
             </div>
         </div>

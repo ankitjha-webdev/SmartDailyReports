@@ -1,7 +1,6 @@
 import React from "react";
 import { Report } from "@src/components/report";
 import browser, { Tabs } from "webextension-polyfill";
-import { Scroller } from "@src/components/scroller";
 import css from "./styles.module.css";
 
 // // // //
